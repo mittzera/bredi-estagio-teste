@@ -37,7 +37,7 @@ function Banner() {
                 height={600}
               />
               <div
-                className={banner.classnameprop}
+                className={banner.classes}
               >
                 {banner.content}
               </div>
