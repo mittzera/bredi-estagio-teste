@@ -1,5 +1,6 @@
 import { navLinks } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
     <footer className="bg-[#1B2629] text-white py-4 px-6" id="footer">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center mb-10 md:mb-0">
-          <a
+          <Link
             href="/"
           >
             <Image
@@ -17,7 +18,7 @@ const Footer = () => {
               width={150}
               height={250}
             />
-          </a>
+          </Link>
         </div>
 
         <div className="text-sm text-[#707070]">
