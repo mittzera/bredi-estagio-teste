@@ -7,13 +7,17 @@ const Footer = () => {
     <footer className="bg-[#1B2629] text-white py-4 px-6" id="footer">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center mb-10 md:mb-0">
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            className=""
-            width={150}
-            height={250}
-          />
+          <a
+            href="/"
+          >
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              className=""
+              width={150}
+              height={250}
+            />
+          </a>
         </div>
 
         <div className="text-sm text-[#707070]">
@@ -22,7 +26,7 @@ const Footer = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`hover:text-secondary mb-2 active:text-green-700 font-poppins font-normal cursor-pointer text-xs min-[400px]:mr-10 mr-0 text-[#707070]`}
+                  className={`hover:text-secondary mb-2  font-poppins font-normal cursor-pointer text-xs min-[400px]:mr-10 mr-0 text-[#707070]`}
                 >
                   <a
                     href={nav.link}
