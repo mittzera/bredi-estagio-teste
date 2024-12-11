@@ -11,6 +11,20 @@ const Header: React.FC = () => {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (toggle) {
+        setToggle(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [toggle]);
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setToggle(false);
@@ -25,7 +39,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <nav className="w-full bg-[#1b2628] flex py-2 justify-between items-center navbar border-b-[1px] border-b-[#3F3E45] relative z-[10]">
+    <nav className="w-full bg-[#1b2628] flex py-2 justify-between items-center navbar border-b-[1px] border-b-[#3F3E45] fixed top-0 left-0 z-[10]">
       <a href={`/`}>
         <div className="flex items-center">
           <Image
@@ -39,7 +53,7 @@ const Header: React.FC = () => {
         {navLinks.map((nav) => (
           <li
             key={nav.id}
-            className="hover:text-secondary active:text-green-700 font-poppins font-normal cursor-pointer text-base xl:text-2xl mr-20 text-[#F7D622]"
+            className="font-poppins font-normal cursor-pointer text-base xl:text-2xl mr-20 text-[#F7D622]"
           >
             <a
               href={nav.link}
@@ -65,14 +79,14 @@ const Header: React.FC = () => {
           ref={menuRef}
           className={`${
             toggle ? "flex" : "hidden"
-          } p-6 bg-[#1b2628] absolute top-20 right-0 mx-0 my-0 w-screen h-auto rounded-xl z-[10]`}
+          } p-6 bg-[#1b2628] absolute top-12 right-0 mx-0 my-0 w-screen h-auto rounded-b-xl z-[10]`}
           style={{ backgroundColor: "#1b2628" }}
         >
           <ul className="list-none flex flex-col justify-center items-center flex-1">
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
-                className="font-poppins hover:text-secondary active:text-green-700 font-normal text-center cursor-pointer text-[22px] mb-4 text-white"
+                className="font-poppins font-normal text-center cursor-pointer text-[22px] mb-4 text-white "
               >
                 <a
                   href={nav.link}
