@@ -18,8 +18,8 @@ function Banner() {
   };
 
   return (
-    <div className="mt-14 relative w-full md:w-[90vw] mx-auto">
-      <div className="relative w-full overflow-hidden">
+    <div className="my-[8rem] relative w-full md:w-[90vw] mx-auto ">
+      <div className="relative w-full overflow-hidden rounded-lg">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
@@ -36,9 +36,7 @@ function Banner() {
                 width={1920}
                 height={600}
               />
-              <div
-                className={banner.classes}
-              >
+              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white md:text-2xl text-xs sm:text-base font-extralight stext-wrap md:w-[30vw] w-[75vw] pl-4 break-normal ml-10 bg-black/30 rounded-xl p-5">
                 {banner.content}
               </div>
             </div>
@@ -46,13 +44,13 @@ function Banner() {
         </div>
         <button
           onClick={goToPrevious}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-black p-3 rounded-full"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-white/30 p-3 py-5 ml-1"
         >
           &lt;
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-black p-3 rounded-full"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-white/30 p-3 py-5bg-white/30 py-5 mr-1"
         >
           &gt;
         </button>
